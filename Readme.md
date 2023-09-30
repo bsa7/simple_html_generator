@@ -10,5 +10,5 @@ gem install rspec
 To run tests:
 
 ```bash
-rspec html_generator_spec.rb
+rspec
 ```

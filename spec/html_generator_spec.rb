@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative './html_generator'
+require_relative '../app/html_generator'
 
 describe ::HtmlGenerator do
   it 'Returns an empty string if no block was passed' do

@@ -1,4 +1,3 @@
-require 'pry'
 require_relative './html/tag_generator'
 
 class HtmlGenerator
