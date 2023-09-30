@@ -18,6 +18,10 @@ class HtmlGenerator
     result.flatten.join("\n")
   end
 
+  private
+
+  attr_reader :block_results_pointer, :indent_size, :result, :tag_generator, :tab_size
+
   def method_missing(tag_name, **attributes, &block)
     @indent_size += tab_size
     last_pointer = block_results_pointer
@@ -33,10 +37,6 @@ class HtmlGenerator
   def respond_to_missing?(name, _)
     tag_generator.html_tag?(name)
   end
-
-  private
-
-  attr_reader :block_results_pointer, :indent_size, :result, :tag_generator, :tab_size
 
   def process_block(&block)
     return [] unless block_given?
